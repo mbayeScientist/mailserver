@@ -2,7 +2,12 @@ from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
 from .email import send_email
 from fastapi.middleware.cors import CORSMiddleware
+import os
+from dotenv import load_dotenv
+
 app = FastAPI()
+#chrgement des variables d'environnement
+load_dotenv()
 
 # Définir un modèle Pydantic pour valider les données du formulaire
 class ContactForm(BaseModel):
@@ -13,7 +18,7 @@ class ContactForm(BaseModel):
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:3000" , "https://mailserver-vqz2.onrender.com","https://mbayescientist.github.io"],  # Permet toutes les origines (en développement, vous pouvez spécifier 'http://localhost:3000')
+    allow_origins=["http://localhost:3000" , os.getenv('server_address'),"https://mbayescientist.github.io"],  # Permet toutes les origines (en développement, vous pouvez spécifier 'http://localhost:3000')
     allow_credentials=True,
     allow_methods=["*"],  # Permet toutes les méthodes (GET, POST, etc.)
     allow_headers=["*"],  # Permet tous les en-têtes
