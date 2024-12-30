@@ -16,7 +16,7 @@ def send_email(name: str, email: str, message: str):
     # Créer le message MIME
     msg = MIMEMultipart()
     msg['From'] = gmail_user
-    msg['To'] = os.getenv('monmail')  # L'adresse de destination
+    msg['To'] = "alioumbayang99@gmail.com"  # L'adresse de destination
     msg['Subject'] = f"Message from {name}"
 
     # Corps du message
@@ -30,7 +30,7 @@ def send_email(name: str, email: str, message: str):
         server.login(gmail_user, gmail_pass)
 
         # Envoyer le message
-        server.sendmail(gmail_user, os.getenv('monmail'), msg.as_string())
+        server.sendmail(gmail_user, "alioumbayang99@gmail.com", msg.as_string())
         server.close()
 
     except Exception as e:
