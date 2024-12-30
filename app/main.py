@@ -13,7 +13,7 @@ class ContactForm(BaseModel):
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:3000","https://mailserver-1z3d.onrender.com/"],  # Permet toutes les origines (en développement, vous pouvez spécifier 'http://localhost:3000')
+    allow_origins=["http://localhost:3000","https://mailserver-1z3d.onrender.com/","https://mbayescientist.github.io/portfolio/"],  # Permet toutes les origines (en développement, vous pouvez spécifier 'http://localhost:3000')
     allow_credentials=True,
     allow_methods=["*"],  # Permet toutes les méthodes (GET, POST, etc.)
     allow_headers=["*"],  # Permet tous les en-têtes
