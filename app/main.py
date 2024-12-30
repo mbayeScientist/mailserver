@@ -18,7 +18,7 @@ class ContactForm(BaseModel):
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:3000" , os.getenv('server_address'),"https://mbayescientist.github.io"],  # Permet toutes les origines (en développement, vous pouvez spécifier 'http://localhost:3000')
+    allow_origins=["http://127.0.0.1:3000" , os.getenv('server_address'),"https://mbayescientist.github.io"],  # Permet toutes les origines (en développement, vous pouvez spécifier 'http://localhost:3000')
     allow_credentials=True,
     allow_methods=["*"],  # Permet toutes les méthodes (GET, POST, etc.)
     allow_headers=["*"],  # Permet tous les en-têtes
